@@ -18,6 +18,7 @@ public class RegisterActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                 startActivity(intent);
+
             }
         });
     }
