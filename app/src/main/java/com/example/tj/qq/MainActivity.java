@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         setContentView(R.layout.activity_recycler_view);
 
         List<String> list = Arrays.asList("A", "B", "C", "D", "E", "F", "G");
@@ -27,11 +28,18 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.e("test", dataList.toString());
 
+        //获取RecycleView对象
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
+
+        //创建线性布局管理器（默认垂直方向）
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+
+        //为RecycleView指定布局管理对象
         recyclerView.setLayoutManager(layoutManager);
 
+        //创建Adapter对象
         SimpleAdapter adapter = new SimpleAdapter(this, dataList);
+        //将对象与控件相关联
         recyclerView.setAdapter(adapter);
     }
 }
