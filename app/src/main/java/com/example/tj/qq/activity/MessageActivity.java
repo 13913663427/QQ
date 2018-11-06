@@ -35,8 +35,10 @@ public class MessageActivity extends Activity {
 
         //创建数据源
 
-        MessageItem messageItem = new MessageItem("http://t2.hddhhn.com/uploads/tu/20150700/jxklgnkbhsf.jpg",
-                "高清花纹","精心收集的图片,内容以高清，花纹，图片，素材，下载为主",timeStamp);
+        MessageItem messageItem = new MessageItem(R.mipmap.back_icon, "高清花纹", "精心收集的图片,内容以高清，花纹，图片，素材，下载为主", timeStamp);
+        dataList.add(messageItem);
+
+        messageItem = new MessageItem(R.mipmap.icon_girl, "高清花纹", "精心收集的图片,内容以高清，花纹，图片，素材，下载为主", timeStamp);
         dataList.add(messageItem);
 
         //创建适配器

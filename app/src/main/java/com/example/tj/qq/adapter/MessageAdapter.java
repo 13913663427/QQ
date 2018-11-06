@@ -41,9 +41,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
         //获得第i条item
-    MessageItem messageItem = dataList.get(i);
+        MessageItem messageItem = dataList.get(i);
 
-    //绑定视图和item的具体某一条属性
+        //绑定视图和item的具体某一条属性
         viewHolder.contentTV.setText(messageItem.getContent());
 
         // 长按字母，删除对应的行
@@ -57,13 +57,17 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             }
         });
 
-    //定义时间格式
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
-    //将时间戳转换为String日期
-    String time = format.format(new Date(messageItem.getTime()));
-    //绑定视图和item中时间属性
+        //定义时间格式
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
+        //将时间戳转换为String日期
+        String time = format.format(new Date(messageItem.getTime()));
+        //绑定视图和item中时间属性
         viewHolder.timeTV.setText(time);
-}
+
+//        String url = messageItem.getImageUrl();
+        int resId = messageItem.getImgResId();
+        viewHolder.imageTV.setImageResource(resId);
+    }
 
 
     @Override
@@ -77,6 +81,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         public TextView timeTV;
         public TextView tittleTV;
         public ImageView imageTV;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //item中某条属性绑定到对应的控件
