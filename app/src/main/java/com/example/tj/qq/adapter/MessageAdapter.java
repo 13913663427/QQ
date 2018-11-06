@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tj.qq.R;
@@ -74,12 +75,18 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView contentTV;
         public TextView timeTV;
+        public TextView tittleTV;
+        public ImageView imageTV;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //item中某条属性绑定到对应的控件
             contentTV = itemView.findViewById(R.id.tv_content);
 
             timeTV = itemView.findViewById(R.id.tv_time);
+            imageTV = itemView.findViewById(R.id.tv_image);
+            tittleTV = itemView.findViewById(R.id.tv_tittle);
+
+
         }
     }
 }

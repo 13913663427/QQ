@@ -8,8 +8,9 @@ public class MessageItem {
     private String content;
     private long time;// 1541429580161
 
-
-    public MessageItem(String content, long time) {
+    public MessageItem(String imageUrl, String tittle, String content, long time) {
+        this.imageUrl = imageUrl;
+        this.tittle = tittle;
         this.content = content;
         this.time = time;
     }
