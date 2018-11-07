@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.tj.qq.R;
 
 import java.io.InputStream;
@@ -27,6 +30,15 @@ public class LoadImageActivity extends Activity {
 
         urlET = findViewById(R.id.et_image_url);
         imageIV = findViewById(R.id.iv_image);
+        Glide.with(this)//
+                .load("https://www.baidu.com/img/bd_logo1.png?where=super")//
+                .apply(new RequestOptions()//
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)//
+                        .skipMemoryCache(true)//
+                        .placeholder(R.mipmap.icon1)//
+                        .error(R.mipmap.icon_girl))//
+                .into(imageIV);
+
 
         findViewById(R.id.btn_load).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +46,8 @@ public class LoadImageActivity extends Activity {
                 // 1. 获取图片的url
                 String url = urlET.getText().toString().trim();
                 // 2. 根据url获取图片
-                loadImage(url);
+//                loadImage(url);
+
 
             }
         });

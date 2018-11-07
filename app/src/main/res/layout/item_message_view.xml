@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
@@ -11,7 +12,8 @@
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:src="@mipmap/icon_2"
+        android:scaleType="centerCrop"
+
         />
 
     <TextView
@@ -20,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
+
         android:layout_toEndOf="@+id/tv_image"
-        android:text="QQ手游"
         android:textSize="12sp"/>
 
     <TextView
@@ -32,8 +34,8 @@
         android:layout_marginBottom="10dp"
         android:layout_marginStart="15dp"
         android:layout_toEndOf="@+id/tv_image"
-        android:text="你的最佳队友竟然是他？"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        tools:text="123123"/>
 
     <TextView
         android:id="@+id/tv_time"
@@ -41,8 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:text="21:49"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        tools:text="21:59"/>
 
 
 </RelativeLayout>

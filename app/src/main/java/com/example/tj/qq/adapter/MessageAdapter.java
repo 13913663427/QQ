@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.tj.qq.R;
 import com.example.tj.qq.item.MessageItem;
 
@@ -58,15 +59,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         });
 
         //定义时间格式
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm", Locale.CHINA);
         //将时间戳转换为String日期
         String time = format.format(new Date(messageItem.getTime()));
         //绑定视图和item中时间属性
-        viewHolder.timeTV.setText(time);
+//        viewHolder.timeTV.setText(time);
 
-//        String url = messageItem.getImageUrl();
-        int resId = messageItem.getImgResId();
-        viewHolder.imageTV.setImageResource(resId);
+        String url = messageItem.getImageUrl();
+        Glide.with(context).load(url).into(viewHolder.imageTV);
     }
 
 
@@ -77,6 +77,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         public TextView contentTV;
         public TextView timeTV;
         public TextView tittleTV;

@@ -7,22 +7,15 @@ public class MessageItem {
     private String tittle;
     private String content;
     private long time;// 1541429580161
-    private int imgResId;
 
-    public MessageItem(int imgResId, String tittle, String content, long time) {
-        this.imgResId = imgResId;
+
+    public MessageItem(String imageUrl, String tittle, String content, long time) {
+        this.imageUrl = imageUrl;
         this.tittle = tittle;
         this.content = content;
         this.time = time;
     }
 
-    public int getImgResId() {
-        return imgResId;
-    }
-
-    public void setImgResId(int imgResId) {
-        this.imgResId = imgResId;
-    }
 
     public String getImageUrl() {
         return imageUrl;
