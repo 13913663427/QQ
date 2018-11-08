@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.tj.qq.R;
 
@@ -32,12 +33,16 @@ public class LoadImageActivity extends Activity {
         imageIV = findViewById(R.id.iv_image);
         Glide.with(this)//
                 .load("https://www.baidu.com/img/bd_logo1.png?where=super")//
-                .apply(new RequestOptions()//
+                .apply(RequestOptions//
+                        .bitmapTransform(new CircleCrop())//
                         .diskCacheStrategy(DiskCacheStrategy.NONE)//
                         .skipMemoryCache(true)//
                         .placeholder(R.mipmap.icon1)//
                         .error(R.mipmap.icon_girl))//
                 .into(imageIV);
+
+//        String url = "https://www.baidu.com/img/bd_logo1.png?where=super";
+//        ImageLoderUtil.load(this,url,R.mipmap.icon1,R.mipmap.icon_girl,imageIV);
 
 
         findViewById(R.id.btn_load).setOnClickListener(new View.OnClickListener() {
@@ -105,6 +110,4 @@ public class LoadImageActivity extends Activity {
             }
         }).start();
     }
-
-
 }

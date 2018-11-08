@@ -14,12 +14,7 @@
 
 
         <activity android:name=".activity.MessageActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="android.intent.action.VIEW"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
 
         <activity android:name=".activity.LoginActivity">
@@ -30,6 +25,15 @@
 
         <activity android:name=".activity.LoadImageActivity">
 
+        </activity>
+
+        <activity android:name=".activity.DrawerLayoutActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
 
     </application>

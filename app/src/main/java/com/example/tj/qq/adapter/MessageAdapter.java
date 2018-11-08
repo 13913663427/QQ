@@ -63,7 +63,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         //将时间戳转换为String日期
         String time = format.format(new Date(messageItem.getTime()));
         //绑定视图和item中时间属性
-//        viewHolder.timeTV.setText(time);
+        viewHolder.timeTV.setText(time);
 
         String url = messageItem.getImageUrl();
         Glide.with(context).load(url).into(viewHolder.imageTV);
