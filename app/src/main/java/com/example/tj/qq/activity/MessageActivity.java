@@ -36,11 +36,17 @@ public class MessageActivity extends Activity {
 
         //创建数据源
 
-        MessageItem messageItem = new MessageItem("http://pic.58pic.com/58pic/15/36/60/00W58PICmGB_1024.jpg", "高清花纹", "花纹，图片，素材，下载为主", timeStamp);
+        MessageItem messageItem = new MessageItem("http://pic.58pic.com/58pic/15/36/60/00W58PICmGB_1024.jpg",
+                "高清花纹", "花纹，图片，素材，下载为主", timeStamp);
         dataList.add(messageItem);
 
-        messageItem = new MessageItem("http://tupian.qqjay.com/u/2017/1208/3_143331_1.jpg", "高清花纹", "精心收集的图片,内容以高清，花纹，图片，素材，下载为主", timeStamp+10086);
+        messageItem = new MessageItem("http://tupian.qqjay.com/u/2017/1208/3_143331_1.jpg",
+                "高清花纹", "精心收集的图片,内容以高清，花纹，图片，素材，下载为主,精心收集的图片,内容以高清，花纹，图片，素材，下载为主,精心收集的图片,内容以高清，花纹，图片，素材，下载为主", timeStamp+10086);
         dataList.add(messageItem);
+
+        MessageItem messageItem2 = new MessageItem("http://img0.imgtn.bdimg.com/it/u=2577811927,228535961&fm=26&gp=0.jpg",
+                "大脚丫", "我的脚丫大吗?", timeStamp);
+        dataList.add(messageItem2);
 
         //创建适配器
         MessageAdapter adapter = new MessageAdapter(this, dataList);
