@@ -13,7 +13,7 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         tv_login = findViewById(R.id.text_regesiter);
         tv_login.setOnClickListener(new View.OnClickListener() {

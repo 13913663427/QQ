@@ -13,7 +13,7 @@ public class RegisterActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_activity);
+        setContentView(R.layout.activity_register);
         tv_register = findViewById(R.id.text_back);
         tv_register.setOnClickListener(new View.OnClickListener() {
             @Override
