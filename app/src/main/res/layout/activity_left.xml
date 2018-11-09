@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="250dp"
+              android:layout_height="match_parent"
+              android:background="#FFC0CB"
+              android:orientation="vertical"
+              android:padding="20dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:drawableLeft="@mipmap/dog"
+        android:gravity="center"
+        android:text="哈士奇"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⭐⭐⭐⭐"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="拥有一只纯种哈士奇，你的人生绝对波澜壮阔"
+        android:textSize="12sp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@mipmap/crown"
+            android:text="  了解会员特权"
+            style="@style/left_menu_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/left_menu_text"
+            android:text="  QQ钱包"
+            android:drawableStart="@mipmap/wallet"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/left_menu_text"
+            android:text="  个性装扮"
+            android:drawableStart="@mipmap/dressup"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/left_menu_text"
+            android:drawableStart="@mipmap/collect"
+            android:text="  我的收藏"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@mipmap/album"
+            android:text="  我的相册"
+            style="@style/left_menu_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/left_menu_text"
+            android:drawableStart="@mipmap/folder"
+            android:text="  我的文件"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/left_menu_text"
+            android:drawableStart="@mipmap/freeflow"
+            android:text="  免流量特权"/>
+    </LinearLayout>
+
+</LinearLayout>

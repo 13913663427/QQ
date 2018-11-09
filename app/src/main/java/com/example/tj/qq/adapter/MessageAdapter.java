@@ -47,6 +47,18 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         //绑定视图和item的具体某一条属性
         viewHolder.contentTV.setText(messageItem.getContent());
 
+        viewHolder.tittleTV.setText(messageItem.getTittle());
+
+        //定义显示时间格式
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss", Locale.CHINA);
+        //将时间戳转换为String日期
+        String time = format.format(new Date(messageItem.getTime()));
+        //绑定视图和item中时间属性
+        viewHolder.timeTV.setText(time);
+
+        String url = messageItem.getImageUrl();
+        Glide.with(context).load(url).into(viewHolder.imageTV);
+
         // 长按字母，删除对应的行
         viewHolder.contentTV.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -57,16 +69,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                 return false;
             }
         });
-
-        //定义时间格式
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm", Locale.CHINA);
-        //将时间戳转换为String日期
-        String time = format.format(new Date(messageItem.getTime()));
-        //绑定视图和item中时间属性
-        viewHolder.timeTV.setText(time);
-
-        String url = messageItem.getImageUrl();
-        Glide.with(context).load(url).into(viewHolder.imageTV);
     }
 
 
