@@ -14,7 +14,12 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.example.tj.qq.R;
 
+import java.util.Objects;
+
 public class MainFragment extends Fragment implements BottomNavigationBar.OnTabSelectedListener {
+
+    private Fragment[] fragments = new Fragment[]{new MessageFragment(), new ContactFragment(), new WatchFragment(), new RecentFragment()};
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -56,7 +61,9 @@ public class MainFragment extends Fragment implements BottomNavigationBar.OnTabS
                 .setFirstSelectedPosition(0)
                 .initialise(); //initialise 一定要放在 所有设置的最后一项
         setDefaultFragment();
+
     }
+
 
     /**
      * 设置默认导航栏
@@ -64,13 +71,16 @@ public class MainFragment extends Fragment implements BottomNavigationBar.OnTabS
     private void setDefaultFragment() {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
-        transaction.replace(R.id.fl_main_fragment, new MessageFragment());
+        transaction.replace(R.id.fl_main_fragment, fragments[0]);
         transaction.commit();
     }
 
     @Override
     public void onTabSelected(int position) {
-
+        Objects.requireNonNull(getFragmentManager())
+                .beginTransaction()
+                .replace(R.id.fl_main_fragment, fragments[position])
+                .commit();
     }
 
     @Override
