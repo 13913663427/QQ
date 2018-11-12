@@ -4,27 +4,16 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tj.qq.R;
 
-
-public class LeftFragment extends Fragment {
-
-    private View leftview;
+public class WatchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        leftview = View.inflate(getActivity(), R.layout.activity_left,null);
-        return leftview;
-
-    }
-
-    public void log(){
-        Log.e("LeftFragment", "LeftFragment打印的日志");
+        return View.inflate(getActivity(), R.layout.fragment_watch, null);
     }
 }
