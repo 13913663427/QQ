@@ -22,12 +22,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp">
+            android:layout_marginTop="250mm">
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="40dp"
+                android:layout_width="96mm"
+                android:layout_height="115mm"
+                android:layout_marginStart="95mm"
                 app:srcCompat="@mipmap/icon_qq_login"/>
 
             <TextView
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="QQ"
                 android:textColor="@color/white"
-                android:textSize="28sp"/>
+                android:textSize="90sp"/>
 
         </LinearLayout>
 
@@ -43,20 +43,20 @@
             android:id="@+id/et_user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="95mm"
+            android:layout_marginTop="208mm"
             android:background="@null"
             android:hint="QQ号/手机号/邮箱"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="16sp"/>
+            android:textSize="56sp"/>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="0.4dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="2mm"
+            android:layout_marginEnd="95mm"
+            android:layout_marginStart="95mm"
+            android:layout_marginTop="60mm"
             android:background="@color/white"/>
 
 
@@ -64,57 +64,60 @@
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="95mm"
+            android:layout_marginTop="82mm"
             android:background="@null"
             android:hint="密码"
             android:inputType="textPassword"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="16sp"/>
+            android:textSize="56sp"/>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="0.4dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="2mm"
+            android:layout_marginEnd="95mm"
+            android:layout_marginStart="95mm"
+            android:layout_marginTop="60mm"
             android:background="@color/white"/>
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="140mm"
+            android:layout_marginEnd="95mm"
+            android:layout_marginStart="95mm"
+            android:layout_marginTop="72mm"
             android:background="@drawable/bg_btn_login"
             android:text="登陆"
             android:textColor="@color/white"
-            android:textSize="16sp"/>
+            android:textSize="64sp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="60mm"
+            android:layout_marginStart="95mm"
+            android:layout_marginEnd="95mm">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+
                 android:text="忘记密码?"
-                android:padding="10dp"
-                android:textColor="#3DC0F8"/>
+                android:padding="10mm"
+                android:textColor="#3DC0F8"
+                android:textSize="46sp"/>
 
             <TextView
                 android:id="@+id/text_regesiter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="40dp"
                 android:text="新用户注册"
-                android:padding="10dp"
-                android:textColor="#3DC0F8"/>
+                android:padding="10mm"
+                android:textColor="#3DC0F8"
+                android:textSize="46sp"/>
 
         </RelativeLayout>
 
@@ -125,19 +128,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp">
+        android:layout_marginBottom="150mm">
 
         <TextView
             android:layout_width="wrap_content"
             android:textColor="@color/white"
             android:layout_height="wrap_content"
-            android:text="登陆即代表阅读并同意"/>
+            android:text="登陆即代表阅读并同意"
+            android:textSize="42sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="服务条款"
-            android:textColor="#3DC0F8"/>
+            android:textColor="#3DC0F8"
+            android:textSize="42sp"/>
     </LinearLayout>
 
 

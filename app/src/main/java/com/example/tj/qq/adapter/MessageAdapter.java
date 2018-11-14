@@ -59,6 +59,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         String url = messageItem.getImageUrl();
         Glide.with(context).load(url).into(viewHolder.imageTV);
 
+
         // 长按字母，删除对应的行
         viewHolder.contentTV.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -89,7 +90,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             super(itemView);
             //item中某条属性绑定到对应的控件
             contentTV = itemView.findViewById(R.id.tv_content);
-
             timeTV = itemView.findViewById(R.id.tv_time);
             imageTV = itemView.findViewById(R.id.tv_image);
             tittleTV = itemView.findViewById(R.id.tv_tittle);

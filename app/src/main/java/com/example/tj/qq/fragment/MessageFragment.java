@@ -27,11 +27,11 @@ public class MessageFragment extends Fragment {
         rootView.findViewById(R.id.btn_open_drawer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                DrawerLayoutActivity drawerLayoutActivity = (DrawerLayoutActivity) getActivity();
-//                drawerLayoutActivity.openDrawer();
-
                 DrawerLayoutActivity drawerLayoutActivity = (DrawerLayoutActivity) getActivity();
-                drawerLayoutActivity.leftFragment.log();
+                drawerLayoutActivity.openDrawer();
+
+//                DrawerLayoutActivity drawerLayoutActivity = (DrawerLayoutActivity) getActivity();
+//                drawerLayoutActivity.leftFragment.log();
 
             }
         });

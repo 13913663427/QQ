@@ -3,119 +3,122 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/text_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="35mm"
+        android:layout_marginTop="96mm"
         android:drawableLeft="@mipmap/back_icon"
-        android:drawablePadding="-5sp"
+        android:drawablePadding="10mm"
         android:text="返回"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="输入手机号码"
-        android:textColor="#000"
-        android:textSize="24sp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="注册即代表阅读并同意"
-            android:textSize="10sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="使用条款"
-            android:textColor="#3DC0F8"
-            android:textSize="10sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="和"
-            android:textSize="10sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="隐私政策"
-            android:textColor="#3DC0F8"
-            android:textSize="10sp"/>
-
-    </LinearLayout>
+        android:textSize="54sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@null"
-            android:text="+86"
-            android:textSize="18sp"
-            android:inputType="number"
-            android:textColorHint="#000"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.15dp"
-            android:layout_marginTop="5dp"
-            android:background="#999"/>
-
-        <Button
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="下一步"
-            android:textColor="#999"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:layout_marginStart="96mm"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我有邀请码，注册获得QQ会员3天。"/>
+            android:layout_marginTop="100mm"
+            android:text="输入手机号码"
+            android:textColor="#000"
+            android:textSize="112sp"/>
 
-        <ImageView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/qq_icon3"/>
+            android:layout_marginTop="50mm"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="注册即代表阅读并同意"
+                android:textSize="42sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用条款"
+                android:textColor="#3DC0F8"
+                android:textSize="42sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="和"
+                android:textSize="42sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="隐私政策"
+                android:textColor="#3DC0F8"
+                android:textSize="42sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="96mm"
+            android:layout_marginTop="50mm"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:inputType="number"
+                android:text="+86"
+                android:textColorHint="#000"
+                android:textSize="52sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2mm"
+                android:layout_marginTop="60mm"
+                android:background="#999"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="70mm"
+                android:text="下一步"
+                android:textColor="#999"
+                android:textSize="56mm"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50mm">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="42sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我有邀请码，注册获得QQ会员3天。"
+                android:textSize="42sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/qq_icon3"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
-
-
-
 </LinearLayout>

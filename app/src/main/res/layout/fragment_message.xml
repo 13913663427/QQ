@@ -7,7 +7,7 @@
         android:id="@+id/btn_open_drawer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="让侧滑Fragment打日志"/>
+        android:text="打开侧滑"/>
 
     <TextView
         android:id="@+id/tv_test"

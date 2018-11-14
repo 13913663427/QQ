@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.example.tj.qq.R;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity{
     private TextView tv_login;
 
     @Override
@@ -41,4 +41,5 @@ public class LoginActivity extends BaseActivity {
             }
         });
     }
+
 }

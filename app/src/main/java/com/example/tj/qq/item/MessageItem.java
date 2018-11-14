@@ -16,7 +16,6 @@ public class MessageItem {
         this.time = time;
     }
 
-
     public String getImageUrl() {
         return imageUrl;
     }
