@@ -15,17 +15,37 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class MessageActivity extends Activity {
+
+    private ArrayList<MessageItem> dataList = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private MessageAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        //将显示的列表布局文件和Activity相关联
         setContentView(R.layout.activity_recycler_view);
 
-        ArrayList<MessageItem> dataList = new ArrayList<>();
+        initView();
+        initData();
+        initListener();
 
+    }
 
+    private void initListener() {
+    }
+
+    private void initView(){
+        //创建适配器
+        adapter = new MessageAdapter(this, dataList);
+
+        //将Item组成的列表填充到Recycleview里面(绑定视图)
+        recyclerView = findViewById(R.id.recycler_view);
+
+        //设置RecycleView布局文件显示策略，LinearLayout线性垂直方向显示
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void initData(){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
         long timeStamp = 0;
         try {
@@ -108,15 +128,6 @@ public class MessageActivity extends Activity {
                 "大草原", "苍茫的天涯是我的爱，绵绵的青山脚下花正开", timeStamp+567890);
         dataList.add(messageItem);
 
-
-        //创建适配器
-        MessageAdapter adapter = new MessageAdapter(this, dataList);
-
-        //将Item组成的列表填充到Recycleview里面(绑定视图)
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
-
-        //设置RecycleView布局文件显示策略，LinearLayout线性垂直方向显示
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
 }

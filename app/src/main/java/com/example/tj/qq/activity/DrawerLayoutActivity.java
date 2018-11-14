@@ -3,7 +3,6 @@ package com.example.tj.qq.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -11,7 +10,7 @@ import com.example.tj.qq.R;
 import com.example.tj.qq.fragment.LeftFragment;
 import com.example.tj.qq.fragment.MainFragment;
 
-public class DrawerLayoutActivity extends AppCompatActivity {
+public class DrawerLayoutActivity extends BaseActivity {
 
     private DrawerLayout drawerLayout;
     private FrameLayout leftMenu;
@@ -22,13 +21,15 @@ public class DrawerLayoutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drawer_layout);
-
-        initView();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_drawer_layout;
+    }
+
+    @Override
+    protected void initView() {
         leftMenu = findViewById(R.id.fl_left);
         mainMenu = findViewById(R.id.fl_main);
         drawerLayout = findViewById(R.id.adl_drawer_layout);
@@ -42,9 +43,13 @@ public class DrawerLayoutActivity extends AppCompatActivity {
                 .commit();
     }
 
+    @Override
+    protected void initData() {
 
-    private void initListener() {
+    }
 
+    @Override
+    protected void initListener() {
         // QQ5.0特效
         drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
@@ -64,7 +69,8 @@ public class DrawerLayoutActivity extends AppCompatActivity {
         });
     }
 
-    public void openDrawer(){
+
+    public void openDrawer() {
         drawerLayout.openDrawer(leftMenu);
     }
 }
