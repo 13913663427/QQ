@@ -16,6 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -29,4 +33,6 @@ dependencies {
     implementation files('src/main/libs/glide-full-4.7.0.jar')
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
     implementation 'me.jessyan:autosize:1.0.6'
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+    implementation 'com.alibaba:fastjson:1.1.70.android'
 }

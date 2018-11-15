@@ -2,9 +2,12 @@ package com.example.tj.qq.item;
 
 public class UserItem {
 
+    public UserItem() {
+    }
+
     public UserItem(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
+            this.userName = userName;
+            this.password = password;
     }
 
     private String userName;
@@ -24,5 +27,10 @@ public class UserItem {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "UserItem{" + "userName='" + userName + '\'' + ", password='" + password + '\'' + '}';
     }
 }
