@@ -40,6 +40,10 @@
         </activity>
 
         <activity android:name=".activity.JSONActivity">
+
+        </activity>
+
+        <activity android:name=".activity.RecycleNetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>

@@ -33,11 +33,14 @@ public class JSONActivity extends BaseActivity {
             userItem = new UserItem("张三2", "123456");
             list.add(userItem);
             JSONArray ja = JSON.parseArray(JSON.toJSONString(list));
-            String backStr = ja.toJSONString();
+            String backStr = ja.toJSONString();//jsonarray转成jsonstring
 
             List<UserItem> users = JSON.parseArray(backStr, UserItem.class);
+
+
             Log.e(TAG, users.toString());
             Log.e(TAG, backStr);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

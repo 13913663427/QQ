@@ -6,12 +6,39 @@ public class UserItem {
     }
 
     public UserItem(String userName, String password) {
-            this.userName = userName;
-            this.password = password;
+        this.userName = userName;
+        this.password = password;
     }
 
     private String userName;
     private String password;
+    private int age;
+    private String sex;
+    private String headUrl;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getHeadUrl() {
+        return headUrl;
+    }
+
+    public void setHeadUrl(String headUrl) {
+        this.headUrl = headUrl;
+    }
 
     public String getUserName() {
         return userName;
@@ -31,6 +58,6 @@ public class UserItem {
 
     @Override
     public String toString() {
-        return "UserItem{" + "userName='" + userName + '\'' + ", password='" + password + '\'' + '}';
+        return "UserItem{" + "userName='" + userName + '\'' + ", age=" + age + ", sex='" + sex + '\'' + '}';
     }
 }

@@ -29,10 +29,12 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation files('src/main/libs/glide-full-4.7.0.jar')
-    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
-    implementation 'me.jessyan:autosize:1.0.6'
-    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
-    implementation 'com.alibaba:fastjson:1.1.70.android'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'//V7包
+    implementation files('src/main/libs/glide-full-4.7.0.jar')//glide图片加载
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'//底部导航栏
+    implementation 'me.jessyan:autosize:1.0.6'//适配
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'//权限
+    implementation 'com.alibaba:fastjson:1.1.70.android'//fastjson转换
+    //必须使用
+    implementation 'com.lzy.net:okgo:3.0.4'//网络请求工具
 }

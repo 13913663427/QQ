@@ -9,23 +9,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.tj.qq.R;
-import com.example.tj.qq.item.MessageItem;
+import com.example.tj.qq.item.UserItem;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
 
     private Context context;
-    private List<MessageItem> dataList;
+    private List<UserItem> dataList;
 
     //创建Adapter并且获得context和datalist
-    public MessageAdapter(Context context, List<MessageItem> dataList) {
+    public MessageAdapter(Context context, List<UserItem> dataList) {
         this.context = context;
+        this.dataList = dataList;
+    }
+
+    public void setDataList(List<UserItem> dataList) {
         this.dataList = dataList;
     }
 
@@ -42,26 +45,23 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
         //获得第i条item
-        MessageItem messageItem = dataList.get(i);
+        UserItem userItem = dataList.get(i);
 
         //绑定视图和item的具体某一条属性
-        viewHolder.contentTV.setText(messageItem.getContent());
+        viewHolder.nameTV.setText(userItem.getUserName());
 
-        viewHolder.tittleTV.setText(messageItem.getTittle());
+        viewHolder.ageTV.setText(String.valueOf(userItem.getAge()));
 
-        //定义显示时间格式
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss", Locale.CHINA);
-        //将时间戳转换为String日期
-        String time = format.format(new Date(messageItem.getTime()));
+
         //绑定视图和item中时间属性
-        viewHolder.timeTV.setText(time);
+        viewHolder.sexTV.setText(userItem.getSex());
 
-        String url = messageItem.getImageUrl();
-        Glide.with(context).load(url).into(viewHolder.imageTV);
+        String url = userItem.getHeadUrl();
+        Glide.with(context).load(url).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(viewHolder.imageTV);
 
 
         // 长按字母，删除对应的行
-        viewHolder.contentTV.setOnLongClickListener(new View.OnLongClickListener() {
+        viewHolder.nameTV.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 dataList.remove(i);
@@ -79,20 +79,20 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         return dataList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView contentTV;
-        public TextView timeTV;
-        public TextView tittleTV;
-        public ImageView imageTV;
+        TextView nameTV;
+        TextView ageTV;
+        TextView sexTV;
+        ImageView imageTV;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             //item中某条属性绑定到对应的控件
-            contentTV = itemView.findViewById(R.id.tv_content);
-            timeTV = itemView.findViewById(R.id.tv_time);
+            nameTV = itemView.findViewById(R.id.tv_name);
+            ageTV = itemView.findViewById(R.id.tv_age);
+            sexTV = itemView.findViewById(R.id.tv_sex);
             imageTV = itemView.findViewById(R.id.tv_image);
-            tittleTV = itemView.findViewById(R.id.tv_tittle);
 
 
         }
