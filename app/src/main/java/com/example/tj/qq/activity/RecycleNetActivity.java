@@ -37,7 +37,8 @@ public class RecycleNetActivity extends BaseActivity {
     @Override
     protected void initData() {
 
-        OkGo.<String>get("http://www.wanandroid.com/tools/mockapi/2452/getUser").execute(new StringCallback() {
+        OkGo.<String>get("http://www.wanandroid.com/tools/mockapi/2452/getUser")
+                .execute(new StringCallback() {
             @Override
             public void onSuccess(Response<String> response) {
                 String jsonstr = response.body();

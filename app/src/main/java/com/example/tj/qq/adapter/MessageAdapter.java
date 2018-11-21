@@ -28,6 +28,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         this.dataList = dataList;
     }
 
+    //将RecyclenetActivity的datalist传进来
     public void setDataList(List<UserItem> dataList) {
         this.dataList = dataList;
     }
@@ -50,14 +51,18 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         //绑定视图和item的具体某一条属性
         viewHolder.nameTV.setText(userItem.getUserName());
 
-        viewHolder.ageTV.setText(String.valueOf(userItem.getAge()));
+        viewHolder.ageTV.setText(String.valueOf(userItem.getAge()));//int类型的age转换成string类型保存在text中
 
 
-        //绑定视图和item中时间属性
+
         viewHolder.sexTV.setText(userItem.getSex());
 
-        String url = userItem.getHeadUrl();
-        Glide.with(context).load(url).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(viewHolder.imageTV);
+//        String url = userItem.getHeadUrl();
+        Glide.with(context)
+                .load("http://139.199.14.212:10086/images/d0742d85e9b743ac869fa1dbe9e11059.png")
+                .apply(RequestOptions
+                        .bitmapTransform(new CircleCrop()))
+                .into(viewHolder.imageTV);
 
 
         // 长按字母，删除对应的行

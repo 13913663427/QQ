@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
-
         android:name=".screenadaptation.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,34 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-        <activity android:name=".activity.MessageActivity">
-
-        </activity>
-
         <activity android:name=".activity.RegisterActivity">
-
-
         </activity>
-
-
         <activity android:name=".activity.DrawerLayoutActivity">
-
         </activity>
-
         <activity android:name=".activity.LoginActivity">
 
         </activity>
-
         <activity android:name=".activity.ReadWriteActivity">
-
         </activity>
-
-        <activity android:name=".activity.JSONActivity">
-
-        </activity>
-
         <activity android:name=".activity.RecycleNetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -52,13 +32,12 @@
             </intent-filter>
         </activity>
 
-
         <meta-data
             android:name="design_width_in_dp"
-            android:value="1440"/>
+            android:value="1080"/>
         <meta-data
             android:name="design_height_in_dp"
-            android:value="2960"/>
+            android:value="1920"/>
 
     </application>
 
