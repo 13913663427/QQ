@@ -1,5 +1,6 @@
 package com.example.tj.qq.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -9,6 +10,7 @@ import android.widget.FrameLayout;
 import com.example.tj.qq.R;
 import com.example.tj.qq.fragment.LeftFragment;
 import com.example.tj.qq.fragment.MainFragment;
+import com.example.tj.qq.item.UserItem;
 
 public class DrawerLayoutActivity extends BaseActivity {
 
@@ -45,7 +47,9 @@ public class DrawerLayoutActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
+        Intent intent = getIntent();
+        UserItem userItem = (UserItem) intent.getSerializableExtra("user");
+        int money = intent.getIntExtra("money", 5);
     }
 
     @Override

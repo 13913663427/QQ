@@ -19,17 +19,21 @@
         <activity android:name=".activity.DrawerLayoutActivity">
         </activity>
         <activity android:name=".activity.LoginActivity">
-
-        </activity>
-        <activity android:name=".activity.ReadWriteActivity">
-        </activity>
-        <activity android:name=".activity.RecycleNetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.ReadWriteActivity">
+        </activity>
+        <activity android:name=".activity.RecycleNetActivity">
+
+        </activity>
+
+        <activity android:name=".activity.HttpActivity">
+
         </activity>
 
         <meta-data

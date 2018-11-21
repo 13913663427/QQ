@@ -1,6 +1,8 @@
 package com.example.tj.qq.item;
 
-public class UserItem {
+import java.io.Serializable;
+
+public class UserItem implements Serializable {
 
     public UserItem() {
     }
@@ -12,9 +14,18 @@ public class UserItem {
 
     private String userName;
     private String password;
+    private int id;
+    private String headUrl;
     private int age;
     private String sex;
-    private String headUrl;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getAge() {
         return age;

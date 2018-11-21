@@ -19,7 +19,7 @@ public class BaseApplication extends Application {
     private void configUnits() {
         AutoSizeConfig.getInstance().getUnitsManager()
                 .setSupportDP(false)
-                .setSupportSP(false)
+                .setSupportSP(true)
                 .setSupportSubunits(Subunits.MM);
 
 
