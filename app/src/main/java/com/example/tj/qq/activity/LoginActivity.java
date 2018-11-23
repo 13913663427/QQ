@@ -3,6 +3,7 @@ package com.example.tj.qq.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,10 +70,13 @@ public class LoginActivity extends BaseActivity {
 
                                 Intent intent = new Intent(LoginActivity.this, DrawerLayoutActivity.class);
                                 intent.putExtra("user", userItem);
-                                intent.putExtra("money", 666);
                                 startActivity(intent);
                             } else {
-                                Toast.makeText(LoginActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                                Toast toast = Toast.makeText(LoginActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT);
+                                LinearLayout linearLayout = (LinearLayout) toast.getView();
+                                TextView messageTextView = (TextView) linearLayout.getChildAt(0);
+                                messageTextView.setTextSize(60);
+                                toast.show();
                             }
 
 

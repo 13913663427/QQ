@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">QQ</string>
+    <string name="reget_verification_code">重新发送</string>
 </resources>

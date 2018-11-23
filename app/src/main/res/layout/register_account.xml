@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/text_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35mm"
+        android:layout_marginTop="96mm"
+        android:drawableLeft="@mipmap/back_icon"
+        android:drawablePadding="10mm"
+        android:text="返回"
+        android:textSize="54sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="96mm"
+        android:orientation="vertical"
+        android:layout_marginEnd="96mm">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100mm"
+            android:text="设置用户名与密码"
+            android:textColor="#000"
+            android:textSize="104sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50mm"
+            android:text="密码由8-16位数字、字母或符号组成，至少含有2种及以上的字符。"
+            android:textSize="44sp"/>
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104mm"
+            android:background="@null"
+            android:hint="用户名"
+            android:textSize="60sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2mm"
+            android:layout_marginTop="54mm"
+            android:background="#999"/>
+
+        <EditText
+            android:id="@+id/edit_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60mm"
+            android:background="@null"
+            android:inputType="textPassword"
+            android:hint="密码"
+            android:textSize="60sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2mm"
+            android:layout_marginTop="54mm"
+            android:background="#999"/>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_marginTop="72mm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册账号"
+            android:textSize="54sp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

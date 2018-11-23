@@ -5,4 +5,7 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="white">#fff</color>
+    <color name="btn_color_code_green">#0dd</color>
+    <color name="btn_get_verification_code">#288</color>
+
 </resources>

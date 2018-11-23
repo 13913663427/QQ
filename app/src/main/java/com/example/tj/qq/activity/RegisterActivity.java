@@ -1,10 +1,15 @@
 package com.example.tj.qq.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.example.tj.qq.R;
 import com.example.tj.qq.utils.PhoneUtil;
 
@@ -15,6 +20,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private TextView editPHONE;
     private TextView editCODE;
     PhoneUtil phoneUtil = PhoneUtil.getInstance();
+    private Button codeBTN;
 
 
     @Override
@@ -34,6 +40,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     protected void initView() {
         editPHONE = findViewById(R.id.edit_phone);
         editCODE = findViewById(R.id.edit_code);
+        codeBTN = findViewById(R.id.btn_code);
     }
 
     @Override
@@ -44,18 +51,30 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     protected void initListener() {
         findViewById(R.id.text_back).setOnClickListener(this);
         findViewById(R.id.btn_next).setOnClickListener(this);
-        findViewById(R.id.btn_code).setOnClickListener(this);
+        codeBTN.setOnClickListener(this);
 
         phoneUtil.setResultListener(new PhoneUtil.PhoneResultListener() {
             @Override
             public void onSuccess(Object data) {
-                Toast.makeText(RegisterActivity.this, "验证成功", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(RegisterActivity.this, RegisterAcountActivity.class);
+                startActivity(intent);
+
             }
 
             @Override
             public void onFailed(Object data) {
-                // {"@type":"java.lang.Throwable","localizedMessage":"{\"detail\":\"用户提交校验的验证码错误。\",\"description\":\"需要校验的验证码错误\",\"httpStatus\":400,\"status\":468,\"error\":\"The length of code should be 4\"}","message":"{\"detail\":\"用户提交校验的验证码错误。\",\"description\":\"需要校验的验证码错误\",\"httpStatus\":400,\"status\":468,\"error\":\"The length of code should be 4\"}","stackTrace":[{"className":"cn.smssdk.net.b","fileName":"Config.java","lineNumber":472,"methodName":"a","nativeMethod":false},{"className":"cn.smssdk.net.b","fileName":"Config.java","lineNumber":437,"methodName":"a","nativeMethod":false},{"className":"cn.smssdk.net.b","fileName":"Config.java","lineNumber":395,"methodName":"a","nativeMethod":false},{"className":"cn.smssdk.net.f","fileName":"Protocols.java","lineNumber":184,"methodName":"b","nativeMethod":false},{"className":"cn.smssdk.b","fileName":"SMSSDKCore.java","lineNumber":296,"methodName":"c","nativeMethod":false},{"className":"cn.smssdk.b","fileName":"SMSSDKCore.java","lineNumber":162,"methodName":"b","nativeMethod":false},{"className":"cn.smssdk.b","fileName":"SMSSDKCore.java","lineNumber":36,"methodName":"a","nativeMethod":false},{"className":"cn.smssdk.b$2","fileName":"SMSSDKCore.java","lineNumber":153,"methodName":"run","nativeMethod":false}],"suppressed":[]}
-                ((Throwable) data).printStackTrace();
+
+                Throwable throwable = (Throwable) data;
+                String jsonStr = throwable.getMessage();
+                JSONObject jo = JSON.parseObject(jsonStr);
+
+
+                Toast toast = Toast.makeText(RegisterActivity.this, jo.getString("detail"), Toast.LENGTH_SHORT);
+                LinearLayout linearLayout = (LinearLayout) toast.getView();
+                TextView messageTextView = (TextView) linearLayout.getChildAt(0);
+                messageTextView.setTextSize(60);
+                toast.show();
+
             }
         });
     }
@@ -68,14 +87,46 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 break;
             case R.id.btn_code:
                 String phone_number = editPHONE.getText().toString().trim();
-                // 请求验证码，其中country表示国家代码，如“86”；phone表示手机号码，如“13800138000”
                 SMSSDK.getVerificationCode("86", phone_number);
+                startTimer();
                 break;
             case R.id.btn_next:
                 String phone_code = editCODE.getText().toString().trim();
                 phone_number = editPHONE.getText().toString().trim();
                 SMSSDK.submitVerificationCode("86", phone_number, phone_code);
         }
+    }
+
+    //倒计时
+    private void startTimer() {
+        codeBTN.setTextColor(getResources().getColor(R.color.btn_color_code_green));//
+        codeBTN.setEnabled(false);
+        new Thread() {
+            @Override
+            public void run() {
+                for (int i = 59; i >= 0; i--) {
+                    final int second = i;
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (second <= 0) {
+                                codeBTN.setTextColor(getResources().getColor(R.color.btn_get_verification_code));
+                                codeBTN.setText(getResources().getString(R.string.reget_verification_code));
+                                codeBTN.setEnabled(true);
+                            } else {
+                                codeBTN.setTextColor(getResources().getColor(R.color.btn_color_code_green));
+                                codeBTN.setText(second + "s");
+                            }
+                        }
+                    });
+                }
+            }
+        }.start();
     }
 
     // 使用完EventHandler需注销，否则可能出现内存泄漏
