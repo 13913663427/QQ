@@ -10,7 +10,7 @@ public class Api {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()//
                     .baseUrl(NetWorkConstants.BASE_URL2)//
-                    .addConverterFactory(GsonConverterFactory.create())//
+                    .addConverterFactory(GsonConverterFactory.create())//jsonString转换成普通对象
                     .build();
         }
         return retrofit;//必须有返回值

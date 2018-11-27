@@ -1,6 +1,6 @@
 package com.example.tj.qq.api;
 
-import com.example.tj.qq.item.Message;
+import com.example.tj.qq.item.User;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -13,5 +13,5 @@ public interface UserInterface {
 
     @POST("user/login")
     @FormUrlEncoded
-    Call<Message> login(@Field("userName") String userName, @Field("password") String password);
+    Call<User> login(@Field("userName") String userName, @Field("password") String password);
 }

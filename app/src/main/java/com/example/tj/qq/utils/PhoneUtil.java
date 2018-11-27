@@ -32,6 +32,7 @@ public class PhoneUtil {
     }
 
     private EventHandler getEventHandler() {
+
         return new EventHandler() {
             public void afterEvent(int event, int result, Object data) {
                 // afterEvent会在子线程被调用，因此如果后续有UI相关操作，需要将数据发送到UI线程

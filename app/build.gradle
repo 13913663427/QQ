@@ -44,9 +44,7 @@ dependencies {
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'//底部导航栏
     implementation 'me.jessyan:autosize:1.0.6'//适配
     implementation 'com.github.tbruyelle:rxpermissions:0.10.2'//权限
-    implementation 'com.alibaba:fastjson:1.1.70.android'//fastjson转换
-    //必须使用
-    implementation 'com.lzy.net:okgo:3.0.4'//网络请求工具
+    implementation 'com.alibaba:fastjson:1.2.51'//fastjson转换
 
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'//网络请求
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
