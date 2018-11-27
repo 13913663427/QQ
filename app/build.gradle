@@ -47,4 +47,7 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.1.70.android'//fastjson转换
     //必须使用
     implementation 'com.lzy.net:okgo:3.0.4'//网络请求工具
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'//网络请求
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 }
