@@ -2,7 +2,6 @@ package com.example.tj.qq.screenadaptation;
 
 import android.app.Application;
 
-import com.lzy.okgo.OkGo;
 import com.mob.MobSDK;
 
 import me.jessyan.autosize.AutoSizeConfig;
@@ -17,7 +16,7 @@ public class BaseApplication extends Application {
         MobSDK.init(this);//初始化MobSDK
 
         configUnits();
-        OkGo.getInstance().init(this);
+
     }
 
     private void configUnits() {
