@@ -4,15 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tj.qq.R;
 import com.example.tj.qq.api.Api;
-import com.example.tj.qq.api.UserInterface;
+import com.example.tj.qq.api.NetWorkConstants;
+import com.example.tj.qq.api.UserLoginInterface;
 import com.example.tj.qq.item.User;
 import com.example.tj.qq.item.User1;
+import com.example.tj.qq.utils.ToastUtil;
 
 import java.net.ConnectException;
 
@@ -27,6 +28,7 @@ public class LoginActivity extends BaseActivity {
     private EditText passwordET;
     private User user;
     private User1 user1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +65,9 @@ public class LoginActivity extends BaseActivity {
             String userName = nameET.getText().toString().trim();
             String password = passwordET.getText().toString().trim();
 
-            Retrofit retrofit = Api.getRetrofit();
-            UserInterface userInterface = retrofit.create(UserInterface.class);
-            Call<User> call = userInterface.login(userName, password);
+            Retrofit retrofit = Api.getRetrofit(NetWorkConstants.BASE_URL);
+            UserLoginInterface userLoginInterface = retrofit.create(UserLoginInterface.class);
+            Call<User> call = userLoginInterface.login(userName, password);
             call.enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
@@ -75,11 +77,8 @@ public class LoginActivity extends BaseActivity {
                         startActivity(new Intent(LoginActivity.this, DrawerLayoutActivity.class));
                     }
                     else{
-                        Toast toast = Toast.makeText(LoginActivity.this, user.getMessage(), Toast.LENGTH_SHORT);
-                        LinearLayout linearLayout = (LinearLayout) toast.getView();
-                        TextView messageTextView = (TextView) linearLayout.getChildAt(0);
-                        messageTextView.setTextSize(60);
-                        toast.show();
+                        ToastUtil.toast(LoginActivity.this,user.getMessage(),Toast.LENGTH_SHORT);
+
 
                     }
                 }
@@ -89,11 +88,7 @@ public class LoginActivity extends BaseActivity {
 
                     Log.e(TAG,t.toString());
                     if (t instanceof ConnectException){
-                        Toast toast = Toast.makeText(LoginActivity.this, "网络失去连接，请重新登陆", Toast.LENGTH_SHORT);
-                        LinearLayout linearLayout = (LinearLayout) toast.getView();
-                        TextView messageTextView = (TextView) linearLayout.getChildAt(0);
-                        messageTextView.setTextSize(60);
-                        toast.show();
+                       ToastUtil.toast(LoginActivity.this,"网络失去连接，请检查网络",Toast.LENGTH_SHORT);
                     }
                 }
 

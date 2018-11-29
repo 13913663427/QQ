@@ -6,10 +6,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Api {
     private static Retrofit retrofit;
 
-    public static Retrofit getRetrofit() {
+    public static Retrofit getRetrofit(String baseUrl) {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()//
-                    .baseUrl(NetWorkConstants.BASE_URL2)//
+                    .baseUrl(baseUrl)//
                     .addConverterFactory(GsonConverterFactory.create())//jsonString转换成普通对象
                     .build();
         }

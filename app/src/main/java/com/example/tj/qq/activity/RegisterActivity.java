@@ -1,5 +1,6 @@
 package com.example.tj.qq.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -55,9 +56,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         phoneUtil.setResultListener(new PhoneUtil.PhoneResultListener() {
             @Override
             public void onSuccess(Object data) {
-//                Intent intent = new Intent(RegisterActivity.this, RegisterAcountActivity.class);
-//                startActivity(intent);
 
+                startActivity(new Intent(RegisterActivity.this,RegisterAcountActivity.class));
             }
 
             @Override

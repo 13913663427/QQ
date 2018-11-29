@@ -7,11 +7,11 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
-public interface UserInterface {
+public interface UserLoginInterface {
 //    @GET("login/cellphone")
 //    Call<UserItem> getUsers(@Query("phone") String phone, @Query("password") String password);
 
     @POST("user/login")
     @FormUrlEncoded
     Call<User> login(@Field("userName") String userName, @Field("password") String password);
-}
+        }
