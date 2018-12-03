@@ -1,13 +1,11 @@
 package com.example.tj.qq.screenadaptation;
 
-import android.app.Application;
-
 import com.mob.MobSDK;
 
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.unit.Subunits;
 
-public class BaseApplication extends Application {
+public class BaseApplication extends com.qzb.common.baseapp.BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();

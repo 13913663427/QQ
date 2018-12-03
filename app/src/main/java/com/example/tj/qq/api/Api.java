@@ -10,9 +10,11 @@ import com.google.gson.GsonBuilder;
 import com.qzb.common.baseapp.BaseApplication;
 import com.qzb.common.util.NetWorkUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -78,8 +80,8 @@ public class Api {
         HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor();
         logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         //缓存
-//        File cacheFile = new File(BaseApplication.getAppContext().getCacheDir(), "cache");
-//        Cache cache = new Cache(cacheFile, 1024 * 1024 * 100); //100Mb
+        File cacheFile = new File(BaseApplication.getAppContext().getCacheDir(), "cache");
+        Cache cache = new Cache(cacheFile, 1024 * 1024 * 100); //100Mb
         //增加头部信息
         Interceptor headerInterceptor = new Interceptor() {
             @Override
@@ -98,7 +100,7 @@ public class Api {
                 .addNetworkInterceptor(mRewriteCacheControlInterceptor)//
                 .addInterceptor(headerInterceptor)//
                 .addInterceptor(logInterceptor)//
-//                .cache(cache)//
+                .cache(cache)//
                 .build();
 
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").serializeNulls().create();
