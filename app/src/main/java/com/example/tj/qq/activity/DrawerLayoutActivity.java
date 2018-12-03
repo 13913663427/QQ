@@ -11,6 +11,7 @@ import com.example.tj.qq.R;
 import com.example.tj.qq.fragment.LeftFragment;
 import com.example.tj.qq.fragment.MainFragment;
 import com.example.tj.qq.item.UserItem;
+import com.qzb.common.base.BaseActivity;
 
 public class DrawerLayoutActivity extends BaseActivity {
 
@@ -21,17 +22,22 @@ public class DrawerLayoutActivity extends BaseActivity {
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_drawer_layout;
     }
 
     @Override
-    protected void initView() {
+    public void initPresenter() {
+
+    }
+
+    @Override
+    public void initView() {
         leftMenu = findViewById(R.id.fl_left);
         mainMenu = findViewById(R.id.fl_main);
         drawerLayout = findViewById(R.id.adl_drawer_layout);
@@ -43,16 +49,16 @@ public class DrawerLayoutActivity extends BaseActivity {
                 .add(R.id.fl_main, new MainFragment())//
                 .add(R.id.fl_left, leftFragment)//
                 .commit();
+        initData();
+        initListener();
     }
 
-    @Override
     protected void initData() {
         Intent intent = getIntent();
         UserItem userItem = (UserItem) intent.getSerializableExtra("user");
         int money = intent.getIntExtra("money", 5);
     }
 
-    @Override
     protected void initListener() {
         // QQ5.0特效
         drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {

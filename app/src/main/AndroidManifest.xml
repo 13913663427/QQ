@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:name=".screenadaptation.BaseApplication"
@@ -19,17 +20,16 @@
         <activity android:name=".activity.DrawerLayoutActivity">
         </activity>
         <activity android:name=".activity.LoginActivity">
-
-        </activity>
-        <activity android:name=".activity.RecycleNetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activity.RecycleNetActivity">
 
-
+        </activity>
 
 
         <meta-data

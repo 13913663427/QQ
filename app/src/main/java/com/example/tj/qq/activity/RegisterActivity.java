@@ -12,6 +12,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.example.tj.qq.R;
 import com.example.tj.qq.utils.PhoneUtil;
+import com.qzb.common.base.BaseActivity;
 
 import cn.smssdk.SMSSDK;
 
@@ -24,7 +25,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 注册一个事件回调，用于处理SMSSDK接口请求的结果
         phoneUtil.onCreate();
@@ -32,21 +33,25 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_register;
     }
 
     @Override
-    protected void initView() {
-        editPHONE = findViewById(R.id.edit_phone);
-        editCODE = findViewById(R.id.edit_code);
-        codeBTN = findViewById(R.id.btn_code);
+    public void initPresenter() {
+
     }
 
     @Override
-    protected void initData() {
+    public void initView() {
+        editPHONE = findViewById(R.id.edit_phone);
+        editCODE = findViewById(R.id.edit_code);
+        codeBTN = findViewById(R.id.btn_code);
 
+        initListener();
     }
+
+
 
     protected void initListener() {
         findViewById(R.id.text_back).setOnClickListener(this);
